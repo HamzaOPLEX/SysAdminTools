@@ -7,7 +7,7 @@ with open(r'config.yml') as file:
     print('--> Start Checking connection ....')
 
 def PingHost(IP):
-    HOST_Status  = 'Conntected :)' if subprocess.run('ping -c 3 '+IP,shell=True,capture_output=True,text=True).returncode == 0 else 'not Connected :('
+    HOST_Status  = 'Conntected :)' if subprocess.run('ping -n 3 '+IP,shell=True,capture_output=True,text=True).returncode == 0 else 'not Connected :('
     
     theMsg = f'{IP} is {HOST_Status}' 
     print(theMsg)
